@@ -47,27 +47,27 @@ for obj in response["Contents"]:
     print(obj)
 
 # # Download File
-# s3.download_file(bucket_name, "Joshua Becker Resume.pdf", "Joshua Becker Resume Downloaded from S3.pdf")
+s3.download_file(bucket_name, "Joshua Becker Resume.pdf", "Joshua Becker Resume Downloaded from S3.pdf")
 # s3.download_file(bucket_name, "burger.jpg", "this burger was downloaded from s3.jpg")
 
 # CREATE -------------------------------------------------------------------------------------
 
 # # Create a New Bucket
-# bucket_location = s3.create_bucket(ACL="public-read", Bucket="new-bucket-created-via-boto3")
-# print(bucket_location)
+bucket_location = s3.create_bucket(ACL="public-read", Bucket="new-bucket-created-via-boto3")
+print(bucket_location)
 
 # CREATE / UPDATE FILE -----------------------------------------------------------------------
 
 # Upload file to bucket [Show with public-read, and without it too]
-# with open("./burger.jpg", "rb") as f:
-#     print(f.name)
-#     s3.upload_fileobj(f, bucket_name, "burger.jpg", ExtraArgs={"ACL": "public-read"})
+with open("./burger.jpg", "rb") as f:
+    print(f.name)
+    s3.upload_fileobj(f, bucket_name, "burger.jpg", ExtraArgs={"ACL": "public-read"})
 
 # DELETE -------------------------------------------------------------------------------------
 
 # Delete File
-# obj = bucket.Object(key='Input/s2.csv') 
-# obj.delete()
+obj = bucket.Object(key='burger.jpg') 
+obj.delete()
 
 # OTHER / NOTES ------------------------------------------------------------------------------
 
@@ -77,7 +77,7 @@ for obj in response["Contents"]:
 
 # # Presigned URL to give limited access to an unauthorized user
 # url = s3.generate_presigned_url(
-#     "get_object", Params={"Bucket": BUCKET_NAME, "Key": "burger.jpg"}, ExpiresIn=30
+#     "get_object", Params={"Bucket": bucket_name, "Key": "burger.jpg"}, ExpiresIn=30
 # )
 # print(url)
 
