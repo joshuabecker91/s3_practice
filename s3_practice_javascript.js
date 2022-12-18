@@ -8,7 +8,7 @@ const s3 = new AWS.S3({
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY_ID,
 });
 
-const BUCKET_NAME = process.env.AWS_BUCKET_NAME || "rando-bucket-name-12121212";
+const BUCKET_NAME = process.env.AWS_BUCKET_NAME || "";
 
 // CRUD Operations
 
