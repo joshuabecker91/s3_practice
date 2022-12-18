@@ -32,7 +32,7 @@ print(all_object_contents)
 for file in all_object_contents:
     print(file['Key'])
 
-# CRUD ---------------------------------------------------------------------------------------
+# -----------------------------------------CRUD ----------------------------------------------
 
 # READ ---------------------------------------------------------------------------------------
 
@@ -48,22 +48,20 @@ for obj in response["Contents"]:
 
 # # Download File
 # s3.download_file(bucket_name, "Joshua Becker Resume.pdf", "Joshua Becker Resume Downloaded from S3.pdf")
+# s3.download_file(bucket_name, "burger.jpg", "this burger was downloaded from s3.jpg")
 
 # CREATE -------------------------------------------------------------------------------------
 
-# # Create Bucket
-# bucket_location = s3.create_bucket(ACL="public-read", Bucket="new-copy-destination-123")
+# # Create a New Bucket
+# bucket_location = s3.create_bucket(ACL="public-read", Bucket="new-bucket-created-via-boto3")
 # print(bucket_location)
+
+# CREATE / UPDATE FILE -----------------------------------------------------------------------
 
 # Upload file to bucket [Show with public-read, and without it too]
 # with open("./burger.jpg", "rb") as f:
 #     print(f.name)
 #     s3.upload_fileobj(f, bucket_name, "burger.jpg", ExtraArgs={"ACL": "public-read"})
-
-# UPDATE -------------------------------------------------------------------------------------
-
-# with open("./burger.jpg", "rb") as f:
-#     s3.put_object
 
 # DELETE -------------------------------------------------------------------------------------
 
@@ -71,8 +69,7 @@ for obj in response["Contents"]:
 # obj = bucket.Object(key='Input/s2.csv') 
 # obj.delete()
 
-# --------------------------------------------------------------------------------------------
-
+# OTHER / NOTES ------------------------------------------------------------------------------
 
 # # Download File with reference
 # with open("downloaded_burger.jpg", "wb") as f:
@@ -83,8 +80,6 @@ for obj in response["Contents"]:
 #     "get_object", Params={"Bucket": BUCKET_NAME, "Key": "burger.jpg"}, ExpiresIn=30
 # )
 # print(url)
-
-
 
 # # Copy object
 # response = s3.copy_object(
@@ -99,7 +94,6 @@ for obj in response["Contents"]:
 # response = s3.get_object(Bucket=bucket_name, Key="burger.jpg")
 # print(response)
 
+# with open("./burger.jpg", "rb") as f:
+#     s3.put_object
 
-
-
-# FULL CRUD 
