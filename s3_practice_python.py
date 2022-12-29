@@ -47,27 +47,34 @@ for obj in response["Contents"]:
     print(obj)
 
 # # Download File
-s3.download_file(bucket_name, "Joshua Becker Resume.pdf", "Joshua Becker Resume Downloaded from S3.pdf")
+s3.download_file(bucket_name, "joshua_becker_resume.pdf", "Joshua Becker Resume Downloaded from S3.pdf")
 # s3.download_file(bucket_name, "burger.jpg", "this burger was downloaded from s3.jpg")
 
 # CREATE -------------------------------------------------------------------------------------
 
 # # Create a New Bucket
-bucket_location = s3.create_bucket(ACL="public-read", Bucket="new-bucket-created-via-boto3")
-print(bucket_location)
+# bucket_location = s3.create_bucket(ACL="public-read", Bucket="new-bucket-created-via-boto3")
+# print(bucket_location)
 
 # CREATE / UPDATE FILE -----------------------------------------------------------------------
 
 # Upload file to bucket [Show with public-read, and without it too]
-with open("./burger.jpg", "rb") as f:
-    print(f.name)
-    s3.upload_fileobj(f, bucket_name, "burger.jpg", ExtraArgs={"ACL": "public-read"})
+# with open("./joshua_becker_resume.pdf", "rb") as f:
+#     print(f.name)
+#     s3.upload_fileobj(f, bucket_name, "joshua_becker_resume.pdf", ExtraArgs={"ACL": "public-read"})
+
+# with open("./burger.jpg", "rb") as f:
+#     print(f.name)
+#     s3.upload_fileobj(f, bucket_name, "burger.jpg", ExtraArgs={"ACL": "public-read"})
 
 # DELETE -------------------------------------------------------------------------------------
 
 # Delete File
-obj = bucket.Object(key='burger.jpg') 
-obj.delete()
+# obj = bucket.Object(key='burger.jpg') 
+# obj.delete()
+
+
+
 
 # OTHER / NOTES ------------------------------------------------------------------------------
 
