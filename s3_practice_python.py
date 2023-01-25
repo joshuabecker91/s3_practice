@@ -59,7 +59,7 @@ s3.download_file(bucket_name, "joshua_becker_resume.pdf", "Joshua Becker Resume 
 # CREATE / UPDATE FILE -----------------------------------------------------------------------
 
 # Upload file to bucket [Show with public-read, and without it too]
-# with open("./joshua_becker_resume.pdf", "rb") as f:
+# with open("./Joshua Becker - Software Engineer 2023 Resume.pdf", "rb") as f:
 #     print(f.name)
 #     s3.upload_fileobj(f, bucket_name, "joshua_becker_resume.pdf", ExtraArgs={"ACL": "public-read"})
 
